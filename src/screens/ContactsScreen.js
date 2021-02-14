@@ -1,5 +1,5 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
-// ReactNativeSocialApp of Hugovidafe (c) 2021
+// Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:10:23
 // Modified: 0/0/2021 11:21:36
 

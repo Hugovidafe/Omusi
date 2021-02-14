@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
-// ReactNativeSocialApp of Hugovidafe (c) 2021
+// Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:23:23
-// Modified: 0/0/2021 22:14:42
+// Modified: 1/1/2021 0:2:45
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
