@@ -1,15 +1,15 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:59
-// Modified: 2/1/2021 8:33:7
+// Modified: 1/1/2021 0:46:12
 
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import styled from 'styled-components';
 import { Ionicons } from '@expo/vector-icons';
 
-import ContactsScreen from '../screens/ContactsScreen';
-import MessageScreen from '../screens/MessageScreen';
+import HomeScreen from '../screens/HomeScreen';
+import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import ProfileStackScreens from '../stacks/ProfileStackScreens';
 
@@ -33,12 +33,12 @@ export default MainStackScreens = () => {
       let iconName;
 
       switch (route.name) {
-        case 'Contacts':
-          iconName = focused ? 'person' : 'person-outline';
+        case 'Home':
+          iconName = focused ? 'home' : 'home-outline';
           break;
 
-        case 'Message':
-          iconName = focused ? 'chatbox' : 'chatbox-outline';
+        case 'Search':
+          iconName = focused ? 'search' : 'search-outline';
           break;
 
         case 'Notification':
@@ -84,8 +84,8 @@ export default MainStackScreens = () => {
     <MainStack.Navigator
       tabBarOptions={tabBarOptions}
       screenOptions={screenOptions}>
-      <MainStack.Screen name="Contacts" component={ContactsScreen} />
-      <MainStack.Screen name="Message" component={MessageScreen} />
+      <MainStack.Screen name="Home" component={HomeScreen} />
+      <MainStack.Screen name="Search" component={SearchScreen} />
       <MainStack.Screen name="Notification" component={NotificationScreen} />
       <MainStack.Screen
         name="Profile"

@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:15
-// Modified: 0/0/2021 22:39:10
+// Modified: 1/1/2021 0:52:51
 
 import React, { useContext } from 'react';
 import styled from 'styled-components';
@@ -45,7 +45,7 @@ export default ProfileScreen = ({ navigation }) => {
             21
           </Text>
           <Text small bold color="#c2c4cd">
-            Posts
+            Playlists
           </Text>
         </StatContainer>
         <StatContainer>
