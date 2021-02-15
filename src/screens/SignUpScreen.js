@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:25:30
-// Modified: 6/0/2021 13:21:16
+// Modified: 1/1/2021 7:45:48
 
 import React, { useState, useContext } from 'react';
 import { Platform } from 'react-native';
@@ -56,7 +56,7 @@ export default SignUpScreen = ({ navigation }) => {
   const signUp = async () => {
     setLoading(true);
 
-    const user = { username, email, password, profilePhoto };
+    const user = { username, email, password, profilePhoto, role: 'user' };
 
     try {
       const createdUser = await firebase.createUser(user);

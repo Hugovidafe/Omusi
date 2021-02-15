@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:24:49
-// Modified: 6/0/2021 16:38:54
+// Modified: 1/1/2021 7:45:24
 
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
@@ -33,6 +33,7 @@ export default SignInScreen = ({ navigation }) => {
         username: userInfo.username,
         email: userInfo.email,
         profilePhotoUrl: userInfo.profilePhotoUrl,
+        role: userInfo.role,
       });
     } catch (error) {
       alert(error.message);

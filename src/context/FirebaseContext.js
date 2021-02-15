@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 16:37:59
-// Modified: 6/0/2021 17:50:2
+// Modified: 1/1/2021 7:44:43
 
 import React, { createContext } from 'react';
 
@@ -35,6 +35,7 @@ const Firebase = {
         username: user.username,
         email: user.email,
         profilePhotoUrl,
+        role: user.role,
       });
 
       if (user.profilePhoto)

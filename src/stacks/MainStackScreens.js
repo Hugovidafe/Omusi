@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:59
-// Modified: 1/1/2021 0:46:12
+// Modified: 1/1/2021 8:0:32
 
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,6 +12,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import ProfileStackScreens from '../stacks/ProfileStackScreens';
+import AdminStackScreen from '../stacks/AdminStackScreens';
 
 import { UserContext } from '../context/UserContext';
 
@@ -43,6 +44,10 @@ export default MainStackScreens = () => {
 
         case 'Notification':
           iconName = focused ? 'notifications' : 'notifications-outline';
+          break;
+
+        case 'Admin':
+          iconName = focused ? 'build' : 'build-outline';
           break;
 
         default:
@@ -101,6 +106,11 @@ export default MainStackScreens = () => {
           },
         })}
       />
+      {user.role == 'admin' ? (
+        <MainStack.Screen name="Admin" component={AdminStackScreen} />
+      ) : (
+        ''
+      )}
     </MainStack.Navigator>
   );
 };
