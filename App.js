@@ -1,24 +1,21 @@
-// Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
-// Omusi of Hugovidafe (c) 2021
-// Created: 0/1/2021 21:56:34
-// Modified: 0/1/2021 21:58:22
-
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-
-import { UserProvider } from './src/context/UserContext';
-import { FirebaseProvider } from './src/context/FirebaseContext';
-
-import AppStackScreens from './src/stacks/AppStackScreens';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <FirebaseProvider>
-      <UserProvider>
-        <NavigationContainer>
-          <AppStackScreens />
-        </NavigationContainer>
-      </UserProvider>
-    </FirebaseProvider>
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
