@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 16:37:59
-// Modified: 1/1/2021 7:44:43
+// Modified: 2/1/2021 23:25:10
 
 import React, { createContext } from 'react';
 
@@ -15,7 +15,8 @@ const FirebaseContext = createContext();
 
 if (!firebase.apps.length) firebase.initializeApp(config);
 
-const db = firebase.firestore();
+const fs = firebase.firestore();
+const db = firebase.database();
 
 const Firebase = {
   getCurrentUser: () => {
@@ -31,7 +32,7 @@ const Firebase = {
 
       let profilePhotoUrl = 'default';
 
-      await db.collection('users').doc(uid).set({
+      await fs.collection('users').doc(uid).set({
         username: user.username,
         email: user.email,
         profilePhotoUrl,
@@ -60,7 +61,7 @@ const Firebase = {
 
       const url = await imageRef.getDownloadURL();
 
-      await db.collection('users').doc(uid).update({
+      await fs.collection('users').doc(uid).update({
         profilePhotoUrl: url,
       });
 
@@ -90,7 +91,7 @@ const Firebase = {
 
   getUserInfo: async (uid) => {
     try {
-      const user = await db.collection('users').doc(uid).get();
+      const user = await fs.collection('users').doc(uid).get();
 
       if (user.exists) return user.data();
     } catch (error) {
