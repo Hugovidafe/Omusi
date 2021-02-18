@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:25:30
-// Modified: 4/1/2021 16:13:49
+// Modified: 4/1/2021 23:16:30
 
 import React, { useState, useContext } from 'react';
 import { Platform } from 'react-native';
@@ -105,7 +105,7 @@ export default function SignUpScreen({ navigation }) {
             autoCompleteType="email"
             autoCorrect={false}
             keyboardType="email-address"
-            onChangeText={(email) => setEmail(email.trim())}
+            onChangeText={(email) => setEmail(email.trim().toLowerCase())}
             value={email}
           />
         </AuthContainer>
@@ -117,7 +117,7 @@ export default function SignUpScreen({ navigation }) {
             autoCompleteType="password"
             autoCorrect={false}
             secureTextEntry={true}
-            onChangeText={(password) => setPassword(password.trim())}
+            onChangeText={(password) => setPassword(password)}
             value={password}
           />
         </AuthContainer>
@@ -146,7 +146,8 @@ export default function SignUpScreen({ navigation }) {
         <RightCircle />
         <LeftCircle />
       </HeaderGraphic>
-      <StatusBar barStyle="light-content" />
+
+      <StatusBar barStyle="dark-content" />
     </Container>
   );
 }

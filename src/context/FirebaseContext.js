@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 16:37:59
-// Modified: 4/1/2021 7:46:57
+// Modified: 4/1/2021 23:49:55
 
 import React, { createContext } from 'react';
 
@@ -23,16 +23,23 @@ const Firebase = {
     return firebase.auth().currentUser;
   },
 
+  getAllUsers: async () => {
+    const users = [];
+    const usersRef = fs.collection('users');
+    const snapshot = await usersRef.get();
+    snapshot.forEach((doc) => {
+      var data = doc.data();
+      data.id = doc.id;
+      users.push(data);
+    });
+    return users;
+  },
+
   createUser: async (user) => {
     try {
       await firebase
         .auth()
         .createUserWithEmailAndPassword(user.email, user.password)
-        .then(() => {
-          alert(
-            "User account created!\nWe're gonna redirect you in a few seconds!"
-          );
-        })
         .catch((e) => {
           if (e.code === 'auth/email-already-in-use') {
             alert('That email address is already in use!');
@@ -40,6 +47,10 @@ const Firebase = {
 
           if (e.code === 'auth/invalid-email') {
             alert('That email address is invalid!');
+          }
+
+          if (e.code === 'auth/weak-password') {
+            alert('Your password must have at least 6 different characters!');
           }
 
           console.error(e);
@@ -59,6 +70,10 @@ const Firebase = {
         profilePhotoUrl = await Firebase.uploadProfilePhoto(user.profilePhoto);
 
       delete user.password;
+
+      alert(
+        "User account created!\nWe're gonna redirect you in a few seconds!"
+      );
 
       return { ...user, profilePhotoUrl, uid };
     } catch (error) {
@@ -117,12 +132,13 @@ const Firebase = {
 
   logOut: async () => {
     try {
-      return await firebase
+      await firebase
         .auth()
         .signOut()
         .then(() => {
           alert('Logged out successfully!');
         });
+      return true;
     } catch (error) {
       console.log('Error @logOut: ', error);
     }

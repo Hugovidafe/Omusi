@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 6/0/2021 0:21:53
-// Modified: 4/1/2021 16:14:54
+// Modified: 4/1/2021 22:53:9
 
 import React, { useContext, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -29,6 +29,7 @@ export default function AppStackScreens() {
           email: userInfo.email,
           username: userInfo.username,
           profilePhotoUrl: userInfo.profilePhotoUrl,
+          role: userInfo.role,
         });
       } else setUser((state) => ({ ...state, uid: false }));
     });

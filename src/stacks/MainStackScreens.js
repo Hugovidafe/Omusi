@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:59
-// Modified: 4/1/2021 16:49:1
+// Modified: 4/1/2021 21:51:55
 
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -85,14 +85,11 @@ export default function MainStackScreens() {
     },
   });
 
-  const AdminScreensStack = () => {
-    return;
-  };
-
   return (
     <MainStack.Navigator
       tabBarOptions={tabBarOptions}
       screenOptions={screenOptions}>
+      {/* TODO: Add titles for website! */}
       <MainStack.Screen name="Home" component={HomeScreen} />
       <MainStack.Screen name="Search" component={SearchScreen} />
       <MainStack.Screen name="Notification" component={NotificationScreen} />

@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:24:49
-// Modified: 4/1/2021 16:13:39
+// Modified: 4/1/2021 22:58:3
 
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components/native';
@@ -89,7 +89,7 @@ export default function SignInScreen({ navigation }) {
 
       <SignUp onPress={() => navigation.navigate('SignUp')}>
         <Text small center>
-          New to SocialApp?{' '}
+          New to Omusi?{' '}
           <Text bold color="#8022d9">
             Sign Up
           </Text>
@@ -100,7 +100,7 @@ export default function SignInScreen({ navigation }) {
         <RightCircle />
         <LeftCircle />
       </HeaderGraphic>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 0/0/2021 22:40:53
-// Modified: 4/1/2021 16:15:5
+// Modified: 4/1/2021 21:51:46
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -13,6 +13,7 @@ export default function SettingsStackScreens() {
 
   return (
     <SettingsStack.Navigator headerMode="none">
+      {/* TODO: Add titles for website! */}
       <SettingsStack.Screen name="Settings" component={SettingsScreen} />
     </SettingsStack.Navigator>
   );

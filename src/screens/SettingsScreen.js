@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:12:51
-// Modified: 4/1/2021 16:13:29
+// Modified: 4/1/2021 22:57:57
 
 import React, { useContext } from 'react';
 import styled from 'styled-components/native';
@@ -49,6 +49,7 @@ export default function SettingsScreen() {
           </Text>
         </Logout>
       </Footer>
+
       <StatusBar barStyle="dark-content" />
     </Container>
   );
