@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm i -g expo-cli
       - run: npm run web
       - name: Firebase Publish React
         uses: mohammed-atif/firebase-publish-react@v1.0
