@@ -1,9 +1,10 @@
 # Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 # Omusi of Hugovidafe (c) 2021
 # Created: 6/1/2021 5:58:55
-# Modified: 1/1/2021 1:21:8
+# Modified: 4/1/2021 18:7:17
 
 # .gitignore
+.env
 node_modules/**/*
 .expo/*
 npm-debug.*
@@ -13,10 +14,7 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
-web-build/
 
 # Ignore Assets folder
 assets/
 
-# Ignore Config folder
-src/config/

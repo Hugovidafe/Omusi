@@ -1,3 +1,4 @@
+.env
 node_modules/**/*
 .expo/*
 npm-debug.*
@@ -10,6 +11,3 @@ npm-debug.*
 
 # macOS
 .DS_Store
-
-# Config
-src/config/
