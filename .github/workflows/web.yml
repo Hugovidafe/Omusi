@@ -18,4 +18,4 @@ jobs:
       - name: Firebase Publish React
         uses: mohammed-atif/firebase-publish-react@v1.0
         with:
-          firebase-token: ${{ secret.FIREBASE_TOKEN }}
+          firebase-token: ${{ secrets.FIREBASE_TOKEN }}
