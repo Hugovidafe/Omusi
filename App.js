@@ -1,9 +1,10 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 0/1/2021 21:56:34
-// Modified: 0/1/2021 21:58:22
+// Modified: 4/1/2021 7:56:27
 
 import React from 'react';
+import { AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { UserProvider } from './src/context/UserContext';
@@ -22,3 +23,5 @@ export default function App() {
     </FirebaseProvider>
   );
 }
+
+AppRegistry.registerComponent('app', () => App);

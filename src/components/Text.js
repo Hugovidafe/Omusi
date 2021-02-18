@@ -1,14 +1,14 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 6/0/2021 0:49:46
-// Modified: 6/0/2021 17:0:20
+// Modified: 4/1/2021 16:7:36
 
 import React from 'react';
 import styled from 'styled-components/native';
 
-export default TextStyle = ({ ...props }) => {
+export default function TextStyle({ ...props }) {
   return <Text {...props}>{props.children}</Text>;
-};
+}
 
 const Text = styled.Text`
   color: ${(props) => props.color ?? '#DBDBDB'};

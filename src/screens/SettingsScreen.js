@@ -1,10 +1,10 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:12:51
-// Modified: 0/0/2021 22:52:21
+// Modified: 4/1/2021 16:13:29
 
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 import { UserContext } from '../context/UserContext';
 import { FirebaseContext } from '../context/FirebaseContext';
@@ -12,7 +12,7 @@ import { FirebaseContext } from '../context/FirebaseContext';
 import Header from '../components/Header';
 import Text from '../components/Text';
 
-export default SettingsScreen = () => {
+export default function SettingsScreen() {
   const [user, setUser] = useContext(UserContext);
   const firebase = useContext(FirebaseContext);
 
@@ -52,7 +52,7 @@ export default SettingsScreen = () => {
       <StatusBar barStyle="dark-content" />
     </Container>
   );
-};
+}
 
 const Container = styled.View`
   flex: 1;

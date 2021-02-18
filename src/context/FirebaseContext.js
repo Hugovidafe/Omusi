@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 16:37:59
-// Modified: 2/1/2021 23:25:10
+// Modified: 4/1/2021 7:46:57
 
 import React, { createContext } from 'react';
 
@@ -27,7 +27,23 @@ const Firebase = {
     try {
       await firebase
         .auth()
-        .createUserWithEmailAndPassword(user.email, user.password);
+        .createUserWithEmailAndPassword(user.email, user.password)
+        .then(() => {
+          alert(
+            "User account created!\nWe're gonna redirect you in a few seconds!"
+          );
+        })
+        .catch((e) => {
+          if (e.code === 'auth/email-already-in-use') {
+            alert('That email address is already in use!');
+          }
+
+          if (e.code === 'auth/invalid-email') {
+            alert('That email address is invalid!');
+          }
+
+          console.error(e);
+        });
       const uid = Firebase.getCurrentUser().uid;
 
       let profilePhotoUrl = 'default';
@@ -101,8 +117,12 @@ const Firebase = {
 
   logOut: async () => {
     try {
-      await firebase.auth().signOut();
-      return true;
+      return await firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          alert('Logged out successfully!');
+        });
     } catch (error) {
       console.log('Error @logOut: ', error);
     }
