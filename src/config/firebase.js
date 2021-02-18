@@ -1,11 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 6/0/2021 1:53:10
-// Modified: 4/1/2021 18:7:23
-
-import dotenv from 'dotenv';
-
-dotenv.config();
+// Modified: 4/1/2021 21:21:55
 
 export default {
   apiKey: process.env.FIREB_APIKEY,
