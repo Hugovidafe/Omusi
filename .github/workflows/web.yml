@@ -15,6 +15,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run web
+        env:
+          FIREB_APIKEY: ${{ secrets.FIREB_APIKEY }}
+          FIREB_PROJECTID: ${{ secrets.FIREB_PROJECTID }}
+          FIREB_MESSSENDERID: ${{ secrets.FIREB_MESSSENDERID }}
+          FIREB_APPID: ${{ secrets.FIREB_APPID }}
       - name: Firebase Publish React
         uses: mohammed-atif/firebase-publish-react@v1.0
         with:
