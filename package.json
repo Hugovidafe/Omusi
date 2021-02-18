@@ -4,9 +4,9 @@
     "improve": "expo install && prettier --config ./.vscode/.prettierrc --write .",
     "sync": "npm run improve && git add . && git commit -am \"New update!\" && git push",
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "android": "expo build:android",
+    "ios": "expo build:ios",
+    "web": "expo build:web",
     "eject": "expo eject"
   },
   "dependencies": {
