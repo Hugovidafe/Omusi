@@ -1,11 +1,11 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:59
-// Modified: 1/1/2021 8:0:32
+// Modified: 4/1/2021 16:49:1
 
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from '../screens/HomeScreen';
@@ -16,7 +16,7 @@ import AdminStackScreen from '../stacks/AdminStackScreens';
 
 import { UserContext } from '../context/UserContext';
 
-export default MainStackScreens = () => {
+export default function MainStackScreens() {
   const MainStack = createBottomTabNavigator();
 
   const [user, setUser] = useContext(UserContext);
@@ -85,6 +85,10 @@ export default MainStackScreens = () => {
     },
   });
 
+  const AdminScreensStack = () => {
+    return;
+  };
+
   return (
     <MainStack.Navigator
       tabBarOptions={tabBarOptions}
@@ -107,13 +111,20 @@ export default MainStackScreens = () => {
         })}
       />
       {user.role == 'admin' ? (
-        <MainStack.Screen name="Admin" component={AdminStackScreen} />
-      ) : (
-        ''
-      )}
+        <MainStack.Screen
+          name="Admin"
+          component={AdminStackScreen}
+          listeners={({ navigation }) => ({
+            tabPress: (e) => {
+              e.preventDefault();
+              navigation.navigate('Admin', { screen: 'Admin' });
+            },
+          })}
+        />
+      ) : null}
     </MainStack.Navigator>
   );
-};
+}
 
 const ProfilePhotoContainer = styled.View`
   width: 33px;

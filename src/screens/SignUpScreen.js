@@ -1,11 +1,11 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:25:30
-// Modified: 1/1/2021 7:45:48
+// Modified: 4/1/2021 16:13:49
 
 import React, { useState, useContext } from 'react';
 import { Platform } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { AntDesign } from '@expo/vector-icons';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
@@ -15,7 +15,7 @@ import { UserContext } from '../context/UserContext';
 
 import Text from '../components/Text';
 
-export default SignUpScreen = ({ navigation }) => {
+export default function SignUpScreen({ navigation }) {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -149,7 +149,7 @@ export default SignUpScreen = ({ navigation }) => {
       <StatusBar barStyle="light-content" />
     </Container>
   );
-};
+}
 
 const Container = styled.View`
   flex: 1;

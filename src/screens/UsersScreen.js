@@ -1,24 +1,26 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
-// Created: 5/0/2021 17:12:16
-// Modified: 4/1/2021 16:13:1
+// Created: 4/1/2021 16:41:9
+// Modified: 4/1/2021 16:45:46
 
 import React from 'react';
 import styled from 'styled-components/native';
+import { MaterialIcons } from '@expo/vector-icons';
+
+import { UserContext } from '../context/UserContext';
+import { FirebaseContext } from '../context/FirebaseContext';
 
 import Header from '../components/Header';
 import Text from '../components/Text';
 
-export default function NotificationScreen() {
+export default function UsersScreen() {
   return (
     <Container>
       <Header>
         <Text large light center>
-          Notifications
+          Users
         </Text>
       </Header>
-
-      <StatusBar barStyle="dark-content" />
     </Container>
   );
 }
@@ -26,5 +28,3 @@ export default function NotificationScreen() {
 const Container = styled.View`
   flex: 1;
 `;
-
-const StatusBar = styled.StatusBar``;

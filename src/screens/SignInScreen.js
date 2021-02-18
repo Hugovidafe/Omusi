@@ -1,10 +1,10 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 8:24:49
-// Modified: 1/1/2021 7:45:24
+// Modified: 4/1/2021 16:13:39
 
 import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
@@ -12,7 +12,7 @@ import { FirebaseContext } from '../context/FirebaseContext';
 
 import Text from '../components/Text';
 
-export default SignInScreen = ({ navigation }) => {
+export default function SignInScreen({ navigation }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
@@ -103,7 +103,7 @@ export default SignInScreen = ({ navigation }) => {
       <StatusBar barStyle="light-content" />
     </Container>
   );
-};
+}
 
 const Container = styled.View`
   flex: 1;

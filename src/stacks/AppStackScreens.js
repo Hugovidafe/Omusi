@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 6/0/2021 0:21:53
-// Modified: 0/0/2021 22:36:46
+// Modified: 4/1/2021 16:14:54
 
 import React, { useContext, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,7 +12,7 @@ import { FirebaseContext } from '../context/FirebaseContext';
 import MainStackScreens from './MainStackScreens';
 import AuthStackScreens from './AuthStackScreens';
 
-export default AppStackScreens = () => {
+export default function AppStackScreens() {
   const AppStack = createStackNavigator();
   const [user, setUser] = useContext(UserContext);
   const firebase = useContext(FirebaseContext);
@@ -43,4 +43,4 @@ export default AppStackScreens = () => {
       )}
     </AppStack.Navigator>
   );
-};
+}

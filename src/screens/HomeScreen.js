@@ -1,17 +1,17 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:10:23
-// Modified: 1/1/2021 0:45:25
+// Modified: 4/1/2021 16:12:43
 
 import React, { useEffect, useContext } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 import { UserContext } from '../context/UserContext';
 
 import Header from '../components/Header';
 import Text from '../components/Text';
 
-export default HomeScreen = () => {
+export default function HomeScreen() {
   const [user, setUser] = useContext(UserContext);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default HomeScreen = () => {
       <StatusBar barStyle="dark-content" />
     </Container>
   );
-};
+}
 
 const Container = styled.View`
   flex: 1;

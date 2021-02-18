@@ -1,10 +1,10 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:15
-// Modified: 1/1/2021 7:21:41
+// Modified: 4/1/2021 16:13:14
 
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
@@ -13,7 +13,7 @@ import { FirebaseContext } from '../context/FirebaseContext';
 import Header from '../components/Header';
 import Text from '../components/Text';
 
-export default ProfileScreen = ({ navigation }) => {
+export default function ProfileScreen({ navigation }) {
   const [user, setUser] = useContext(UserContext);
   const firebase = useContext(FirebaseContext);
 
@@ -76,7 +76,7 @@ export default ProfileScreen = ({ navigation }) => {
       </Footer>
     </Container>
   );
-};
+}
 
 const Container = styled.View`
   flex: 1;

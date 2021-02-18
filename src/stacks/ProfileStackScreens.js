@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 0/0/2021 20:6:16
-// Modified: 0/0/2021 22:41:46
+// Modified: 4/1/2021 16:14:35
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,7 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsStackScreen from './SettingsStackScreens';
 
-export default ProfileStackScreens = () => {
+export default function ProfileStackScreens() {
   const ProfileStack = createStackNavigator();
 
   return (
@@ -18,4 +18,4 @@ export default ProfileStackScreens = () => {
       <ProfileStack.Screen name="Settings" component={SettingsStackScreen} />
     </ProfileStack.Navigator>
   );
-};
+}
