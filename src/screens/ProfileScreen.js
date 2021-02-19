@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:15
-// Modified: 4/1/2021 16:13:14
+// Modified: 4/1/2021 22:57:49
 
 import React, { useContext } from 'react';
 import styled from 'styled-components/native';
@@ -74,6 +74,8 @@ export default function ProfileScreen({ navigation }) {
           </Text>
         </Settings>
       </Footer>
+
+      <StatusBar barStyle="dark-content" />
     </Container>
   );
 }
@@ -108,3 +110,5 @@ const Footer = styled.View`
 `;
 
 const Settings = styled.TouchableOpacity``;
+
+const StatusBar = styled.StatusBar``;
