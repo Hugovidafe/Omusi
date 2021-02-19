@@ -1,11 +1,11 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:15
-// Modified: 4/1/2021 22:57:49
+// Modified: 5/1/2021 1:49:15
 
 import React, { useContext } from 'react';
 import styled from 'styled-components/native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
 import { FirebaseContext } from '../context/FirebaseContext';
@@ -26,13 +26,11 @@ export default function ProfileScreen({ navigation }) {
       </Header>
 
       <ProfilePhotoContainer>
-        <ProfilePhoto
-          source={
-            user.ProfilePhotoUrl === 'default'
-              ? require('../../assets/icon.png')
-              : { uri: user.profilePhotoUrl }
-          }
-        />
+        {user.profilePhotoUrl !== 'default' ? (
+          <ProfilePhoto source={{ uri: user.profilePhotoUrl }} />
+        ) : (
+          <Ionicons name="person-circle-outline" size={128} />
+        )}
       </ProfilePhotoContainer>
 
       <Text large bold margin="16px 0 32px 0">

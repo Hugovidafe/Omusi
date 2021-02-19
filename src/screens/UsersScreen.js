@@ -1,11 +1,11 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 4/1/2021 16:41:9
-// Modified: 4/1/2021 23:34:2
+// Modified: 5/1/2021 1:47:52
 
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
 import { FirebaseContext } from '../context/FirebaseContext';
@@ -31,7 +31,11 @@ export default function UsersScreen({ navigation }) {
   const renderUser = ({ item: user }) => {
     return (
       <UserContainer /* onPress={() => navigation.navigate()} */>
-        <UserProfilePhoto source={{ uri: user.profilePhotoUrl }} />
+        {user.profilePhotoUrl !== 'default' ? (
+          <UserProfilePhoto source={{ uri: user.profilePhotoUrl }} />
+        ) : (
+          <Ionicons name="person-circle-outline" size={48} />
+        )}
         <UserInfo>
           <Text medium>{capitalize(user.username)}</Text>
           <Text small>{user.email.toLowerCase()}</Text>

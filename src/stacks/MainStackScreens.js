@@ -1,7 +1,7 @@
 // Author: Hugovidafe <hugo.vidal.ferre@gmail.com>
 // Omusi of Hugovidafe (c) 2021
 // Created: 5/0/2021 17:13:59
-// Modified: 4/1/2021 21:51:55
+// Modified: 5/1/2021 1:52:58
 
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -46,6 +46,10 @@ export default function MainStackScreens() {
           iconName = focused ? 'notifications' : 'notifications-outline';
           break;
 
+        case 'Profile':
+          iconName = focused ? 'person' : 'person-outline';
+          break;
+
         case 'Admin':
           iconName = focused ? 'build' : 'build-outline';
           break;
@@ -55,28 +59,16 @@ export default function MainStackScreens() {
           break;
       }
 
-      if (route.name === 'Profile') {
+      if (route.name === 'Profile' && user.profilePhotoUrl !== 'default') {
         if (!focused)
           return (
             <ProfilePhotoContainer>
-              <ProfilePhoto
-                source={
-                  user.ProfilePhotoUrl === 'default'
-                    ? require('../../assets/icon.png')
-                    : { uri: user.profilePhotoUrl }
-                }
-              />
+              <ProfilePhoto source={{ uri: user.profilePhotoUrl }} />
             </ProfilePhotoContainer>
           );
         return (
           <ProfilePhotoContainer focused>
-            <ProfilePhoto
-              source={
-                user.ProfilePhotoUrl === 'default'
-                  ? require('../../assets/icon.png')
-                  : { uri: user.profilePhotoUrl }
-              }
-            />
+            <ProfilePhoto source={{ uri: user.profilePhotoUrl }} />
           </ProfilePhotoContainer>
         );
       }
